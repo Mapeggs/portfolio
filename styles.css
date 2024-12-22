@@ -6,11 +6,27 @@ body {
 }
 
 header {
-    background-color: #000000;
-    color: #fff;
+    background: linear-gradient(135deg, #007acc, #003f6b);
     padding: 1rem;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: all 0.5s ease;
 }
+
+header.shrink {
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #003f6b, #001f3b); 
+}
+
+
+
+
+header.shrink h1 {
+    font-size: 2rem; 
+    transform: translateY(-10px); 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 
 nav ul {
     list-style-type: none;
@@ -43,28 +59,77 @@ nav ul li a.active {
 }
 
 main {
+    background: linear-gradient(180deg, #f9f9f9, #e0e0e0); 
     padding: 2rem;
+    margin: 1rem auto;
+    max-width: 1200px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-
 .page {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    background: white;
+    padding: 2rem;
+    margin: 0 auto 2rem; 
+    max-width: 800px; 
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
 }
 
 .page.active {
     opacity: 1;
+    transform: translateY(0); 
 }
 
+.page:not(.active) {
+    opacity: 0; 
+    transform: translateY(50px); 
+}
+
+
+h1 {
+    font-size: 3rem; 
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
+                 4px 4px 8px rgba(0, 0, 0, 0.3); 
+    margin: 0;
+    transition: all 0.5s ease; 
+}
+
+
+
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700; 
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+
+
+
+
+
 #about {
-    text-align: center;
+    text-align: left; 
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#about h2.education {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .aligned-titles {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
+    text-align: left; 
+    margin-bottom: 1rem; 
 }
 
 .education,
@@ -74,10 +139,41 @@ main {
 
 
 .education {
-    color: #000000; 
+    margin-bottom: 1rem; 
 }
+
+
+
+.education-list {
+    list-style-type: none;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+
+.education-list > li {
+    margin-bottom: 0.5rem; 
+}
+
+.education-list p {
+    margin: 0.5rem 0; 
+    line-height: 1.5; 
+}
+
+
+.education-list ul {
+    padding-left: 1.5rem; 
+}
+
+.education-list li strong {
+    
+    color: #007acc; 
+}
+
 
 .fun-fact {
     color: #000000; 
 }
+
+
+
 

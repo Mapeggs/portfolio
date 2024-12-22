@@ -20,6 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Show the corresponding page
             document.getElementById(targetPage).classList.add("active");
+
+
+            // Shrink the header on "About" page
+            if (targetPage === "about") {
+                header.classList.add("shrink");
+            } else {
+                header.classList.remove("shrink");
+            }
         });
     });
 });
