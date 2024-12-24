@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
@@ -13,23 +12,24 @@
         <h1>Anthony Nguyen</h1>
         <nav>
             <ul id="navbar">
-                <li><a href="#" data-page="projects" class="nav-link">Projects</a></li>
-                <li><a href="#" data-page="about" class="nav-link active">About</a></li>
-                <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+                <li><a href="#projects" data-page="projects" class="nav-link">Projects</a></li>
+                <li><a href="#about" data-page="about" class="nav-link active" aria-current="page">About</a></li>
+                <li><a href="#contact" data-page="contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
+        <!-- About Section -->
         <section id="about" class="page active">
+            <h2>About Me</h2>
             <p>
                 Hello, my name is Anthony Nguyen, and this is my portfolio. I’m 20 years old and will be turning 21 in May 2025. 
                 I’m currently a junior at UCSC, studying CSGD (Computer Science: Game Design). I am pursuing my dream career in game design, 
                 with the goal of becoming a game producer. One day, I hope to achieve my ultimate goal of creating a popular and impactful game.
             </p>
-            
-
             <div class="aligned-titles">
-                <h2 class="education">Education</h2>
+                <h3 class="education">Education</h3>
                 <ul class="education-list">
                     <li><strong>College:</strong> University of California, Santa Cruz</li>
                     <li><strong>Major:</strong> CSGD (Computer Science: Game Design)</li>
@@ -39,23 +39,54 @@
                     <li><strong>GPA:</strong> 3.4</li>
                     <li>
                         <strong>Relevant Coursework:</strong>
-                        <p>Data Structures and Algorithms, Assembly Language, Programming Abstractions, Discrete Mathematics, Game Systems, Video Game Design/Development</p>                        
+                        <ul>
+                            <li>Data Structures and Algorithms</li>
+                            <li>Assembly Language</li>
+                            <li>Programming Abstractions</li>
+                            <li>Discrete Mathematics</li>
+                            <li>Game Systems</li>
+                            <li>Video Game Design/Development</li>
+                        </ul>
                     </li>
                 </ul>
-                
-                
-                <h2 class="fun-fact">FUN FACT</h2>
+                <h3 class="fun-fact">Fun Fact</h3>
+                <p>I have a passion for creating unique game mechanics and experimenting with interactive storytelling!</p>
             </div>
         </section>
+
+        <!-- Projects Section -->
         <section id="projects" class="page">
             <h2>Projects</h2>
-            <p>Showcase your projects here!</p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="project1-thumbnail.jpg" alt="Project 1 Thumbnail">
+                    <h3>Project Title</h3>
+                    <p>Short description of the project.</p>
+                    <a href="https://github.com/example/project1" target="_blank">View Project</a>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
         </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="page">
             <h2>Contact</h2>
-            <p>Email: yourname@example.com</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Anthony Nguyen | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

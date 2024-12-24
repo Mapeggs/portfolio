@@ -1,32 +1,17 @@
-
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
 }
 
 header {
     background: linear-gradient(135deg, #007acc, #003f6b);
-    padding: 1rem;
+    padding: 2rem 1rem; /* Increase padding for spacing */
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
 }
-
-header.shrink {
-    padding: 0.5rem;
-    background: linear-gradient(135deg, #003f6b, #001f3b); 
-}
-
-
-
-
-header.shrink h1 {
-    font-size: 2rem; 
-    transform: translateY(-10px); 
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
 
 nav ul {
     list-style-type: none;
@@ -45,6 +30,7 @@ nav ul li a {
     text-decoration: none;
     padding: 0.5rem;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -59,50 +45,51 @@ nav ul li a.active {
 }
 
 main {
-    background: linear-gradient(180deg, #f9f9f9, #e0e0e0); 
+    position: relative; /* Position for absolute child elements */
+    background: linear-gradient(180deg, #f9f9f9, #e0e0e0);
     padding: 2rem;
     margin: 1rem auto;
-    max-width: 1200px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 70vh; /* Ensure minimum height to avoid collapse */
 }
 
+/* Page Section Styles */
 .page {
     background: white;
     padding: 2rem;
-    margin: 0 auto 2rem; 
-    max-width: 800px; 
+    position: absolute; /* Remove from document flow */
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(50px);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transitions */
+    pointer-events: none; /* Prevent interaction with hidden pages */
 }
 
 .page.active {
+    position: relative; /* Restore positioning for active page */
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
+    pointer-events: auto; /* Allow interaction */
 }
-
-.page:not(.active) {
-    opacity: 0; 
-    transform: translateY(50px); 
-}
-
 
 h1 {
-    font-size: 3rem; 
+    font-size: 3rem;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 
-                 4px 4px 8px rgba(0, 0, 0, 0.3); 
-    margin: 0;
-    transition: all 0.5s ease; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 4px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 0 0 1rem; /* Add spacing below header */
+    transition: all 0.5s ease;
 }
-
-
-
 
 h2 {
     font-family: 'Lato', sans-serif;
-    font-weight: 700; 
+    font-weight: 700;
 }
 
 p {
@@ -110,13 +97,9 @@ p {
     font-weight: 400;
 }
 
-
-
-
-
-
+/* About Section */
 #about {
-    text-align: left; 
+    text-align: left;
     margin: 0 auto;
     padding: 1rem;
 }
@@ -128,8 +111,8 @@ p {
 }
 
 .aligned-titles {
-    text-align: left; 
-    margin-bottom: 1rem; 
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
 .education,
@@ -137,12 +120,9 @@ p {
     margin: 0;
 }
 
-
 .education {
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
-
-
 
 .education-list {
     list-style-type: none;
@@ -151,29 +131,22 @@ p {
 }
 
 .education-list > li {
-    margin-bottom: 0.5rem; 
+    margin-bottom: 0.5rem;
 }
 
 .education-list p {
-    margin: 0.5rem 0; 
-    line-height: 1.5; 
+    margin: 0.5rem 0;
+    line-height: 1.5;
 }
 
-
 .education-list ul {
-    padding-left: 1.5rem; 
+    padding-left: 1.5rem;
 }
 
 .education-list li strong {
-    
-    color: #007acc; 
+    color: #007acc;
 }
-
 
 .fun-fact {
-    color: #000000; 
+    color: #000000;
 }
-
-
-
-
