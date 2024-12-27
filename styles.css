@@ -94,59 +94,117 @@ h2 {
 
 p {
     font-family: 'Lato', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 /* About Section */
-#about {
-    text-align: left;
-    margin: 0 auto;
-    padding: 1rem;
+.about-container {
+    display: flex;
+    justify-content: center; /* Center align content horizontally */
+    align-items: center; /* Center align content vertically */
+    gap: 2rem; /* Add spacing between text and image */
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto; /* Center the section on the page */
+    max-width: 1000px; /* Limit the container width */
 }
 
-#about h2.education {
-    margin-top: 1rem;
-    font-size: 1.5rem;
+.about-text {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400; 
+    color: #333;
+    line-height: 1.6; 
+    flex: 2; /* Take up more space for text */
+    text-align: left; /* Align text to the left for readability */
+    font-size: 1rem;
+}
+
+.education-section, .fun-fact-section {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400;
+    color: #333; 
+    line-height: 1.6; 
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
     color: #333;
 }
 
-.aligned-titles {
+.about-text p {
+    font-weight: 400;
+    color: #333; 
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    flex: 1; /* Reserve less space for the image */
+    text-align: center; /* Center the image */
+}
+
+.about-image img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+
+
+/* EDucation/Fun Fact Section */
+.education-funfact-container {
+    display: flex;
+    justify-content: space-between; /* Space out the sections */
+    align-items: flex-start; /* Align items to the top */
+    gap: 2rem; /* Add spacing between the sections */
+}
+
+.education-section,
+.fun-fact-section {
+    flex: 1; /* Make each section take up equal width */
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.education-section {
     text-align: left;
+}
+
+.fun-fact-section {
+    text-align: left;
+}
+
+.education-section h3,
+.fun-fact-section h3 {
+
+    color: #333;
+    text-align: center;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.education,
-.fun-fact {
-    margin: 0;
-}
-
-.education {
-    margin-bottom: 1rem;
+.education-section p, .fun-fact-section p {
+    font-weight: 400; 
+    color: #333;
 }
 
 .education-list {
     list-style-type: none;
-    margin-top: 1rem;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .education-list > li {
+    font-weight: 400;
+    color: #333; 
     margin-bottom: 0.5rem;
 }
 
-.education-list p {
-    margin: 0.5rem 0;
-    line-height: 1.5;
-}
-
-.education-list ul {
-    padding-left: 1.5rem;
-}
-
-.education-list li strong {
-    color: #007acc;
-}
-
-.fun-fact {
-    color: #000000;
-}
