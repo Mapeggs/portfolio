@@ -208,3 +208,80 @@ p {
     margin-bottom: 0.5rem;
 }
 
+
+
+/* Projects Section */
+.project-card {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center; /* Center align vertically */
+    gap: 1.5rem; /* Space between image and text */
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0; /* Space between project cards */
+}
+
+.project-card img {
+    max-width: 250px; /* Limit the size of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.project-card-content {
+    flex: 1; /* Make content take up remaining space */
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #007acc;
+}
+
+.project-card p {
+    margin: 0.5rem 0;
+}
+
+/* Button Links */
+.project-card a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007acc;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 0.5rem; /* Space between buttons */
+}
+
+.project-card a:hover {
+    background-color: #005f9a;
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+}
+
+
