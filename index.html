@@ -118,21 +118,26 @@
 
         <!-- Contact Section -->
         <section id="contact" class="page">
-            <h2>Contact</h2>
-            <form>
+            <h2>Contact Me</h2>
+            <p>If you have any questions or just want to reach out, feel free to use the form below. I'll get back to you as soon as possible!</p>
+            <form id="contactForm" action="https://formsubmit.co/anguy410@ucsc.edu" method="POST">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                
                 <button type="submit">Send</button>
             </form>
         </section>
+        
     </main>
 
     <footer>
-        <p>&copy; 2024 Anthony Nguyen | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+        <p>&copy; 2024 Anthony Nguyen | <a href="www.linkedin.com/in/ant-1aa0a1342">LinkedIn</a> | <a href="https://github.com/Mapeggs">GitHub</a> | <a href="/assets/Ant's Resume.pdf" download>Resume</a></p>
     </footer>
 
     <script src="script.js"></script>
