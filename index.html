@@ -25,14 +25,15 @@
             <div class="about-container">
                 <div class="about-text">
                     <h2>About Me</h2>
-                    <p>
-                        Hello, my name is Anthony Nguyen, and this is my portfolio. I’m 20 years old and will be turning 21 in May 2025. 
-                        I’m currently a junior at UCSC, studying CSGD (Computer Science: Game Design). I am pursuing my dream career in game design, 
-                        with the goal of becoming a game producer. One day, I hope to achieve my ultimate goal of creating a popular and impactful game.
+                    <p> 
+                        As a motivated and results-oriented Computer Science major with a deep passion for game design, 
+                        I am committed to pursuing my dream of becoming a game producer. Currently a junior at UCSC, I 
+                        aim to create games that are both impactful and widely enjoyed. My skill set includes experience 
+                        with Unity development and proficiency in programming languages such as C++, Python, and JavaScript.
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="/assets/me.JPEG" alt="A picture of Anthony Nguyen">
+                    <img src="assets/me.JPEG" alt="A picture of Anthony Nguyen">
                 </div>
             </div>
             <div class="education-funfact-container">
@@ -80,7 +81,7 @@
             
             <!-- Dodgeball Project -->
             <div class="project-card">
-                <img src="/assets/Dodgeball.png" alt="DodgeBall Thumbnail">
+                <img src="assets/Dodgeball.png" alt="DodgeBall Thumbnail">
                 <div class="project-card-content">
                     <h3>DodgeBall</h3>
                     <p>
@@ -96,7 +97,7 @@
             </div>
                 <!-- House Tour Trailer Project -->
             <div class="project-card">
-                <img src="/assets/housetour.png" alt="House Tour Thumbnail">
+                <img src="assets/housetour.png" alt="House Tour Thumbnail">
                 <div class="project-card-content">
                     <h3>House Tour Trailer</h3>
                     <p>
@@ -118,21 +119,28 @@
 
         <!-- Contact Section -->
         <section id="contact" class="page">
-            <h2>Contact</h2>
-            <form>
+            <h2>Contact Me</h2>
+            <p>If you have any questions or just want to reach out, feel free to use the form below. I'll get back to you as soon as possible!</p>
+            <form id="contactForm" action="https://formsubmit.co/anguy410@ucsc.edu" method="POST">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                
+                <input type="hidden" name="_next" value="https://mapeggs.github.io/portfolio/">
                 <button type="submit">Send</button>
             </form>
         </section>
+        
     </main>
 
     <footer>
-        <p>&copy; 2025 Anthony Nguyen | <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
+
+        <p>&copy; 2024 Anthony Nguyen | <a href="www.linkedin.com/in/ant-1aa0a1342">LinkedIn</a> | <a href="https://github.com/Mapeggs">GitHub</a> | <a href="/assets/Ant's Resume.pdf" download>Resume</a></p>
     </footer>
 
     <script src="script.js"></script>
