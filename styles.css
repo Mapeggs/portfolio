@@ -300,6 +300,7 @@ p {
 
 /* Contact Section Styling */
 #contact {
+    font-family: 'Lato', sans-serif; 
     background: #f9f9f9;
     padding: 2rem;
     border-radius: 10px;
@@ -310,12 +311,14 @@ p {
 }
 
 #contact h2 {
+    font-family: 'Lato', sans-serif; 
     font-size: 2rem;
     color: #007acc;
     margin-bottom: 1rem;
 }
 
 #contact p {
+    font-family: 'Lato', sans-serif; 
     font-size: 1rem;
     color: #555;
     margin-bottom: 1.5rem;
@@ -363,8 +366,6 @@ form button:hover {
     background-color: #005f9a;
     transform: scale(1.05);
 }
-
-
 
 
 
