@@ -1,15 +1,17 @@
 html{
     height: 100%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
+
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;      /* full viewport height */
+  display: flex;          /* flex layout lives here */
+  flex-direction: column; /* stack header, main, footer */
 }
 
 header {
@@ -90,7 +92,7 @@ main {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
                  4px 4px 8px rgba(0, 0, 0, 0.3);
@@ -100,12 +102,20 @@ h1 {
 
 h2 {
     font-family: 'Lato', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h3{
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
     font-weight: 700;
 }
 
 p {
     font-family: 'Lato', sans-serif;
     font-weight: 700;
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -377,6 +387,7 @@ footer {
     padding: 1rem 0; 
     font-size: 1rem;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: auto; 
 }
 
 footer a {
@@ -388,3 +399,297 @@ footer a {
 footer a:hover {
     text-decoration: underline; /* Add underline on hover */
 }
+
+/* === Navbar layout with social icons (top-right) === */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left; /* override previous center */
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Left side container (name + links stacked) */
+header .nav-left {
+  display: flex;
+  flex-direction: column;  /* stack name above links */
+  align-items: center;     /* center align */
+  text-align: center;
+  flex: 1;
+}
+
+/* Name styling */
+header .site-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+  color: white;
+}
+
+/* Nav links below name */
+header .main-nav {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+header .main-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  transition: color 0.2s ease;
+}
+header .main-nav a:hover {
+  color: #ddd;
+}
+
+/* Social icons stay right */
+header .social-nav {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+
+/* Keep main nav items grouped to the left */
+header nav .main-nav, 
+header nav #navbar {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start; /* override global center */
+}
+
+/* Social icons group on the right */
+header nav .social-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto; /* push to the right */
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+header nav .social-nav a {
+    display: inline-flex;
+    position: relative;           /* for tooltip positioning */
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: rgba(255,255,255,0.12);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+header nav .social-nav a:hover {
+    transform: translateY(-1px) scale(1.05);
+    background: rgba(255,255,255,0.25);
+}
+
+/* Icon colors inherit from fill */
+header nav .social-nav svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+}
+
+/* === Tooltip that shows the URL on hover === */
+header nav .social-nav a::after {
+    content: attr(data-url);
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    white-space: nowrap;
+    background: #111;
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(-4px);
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 1001;
+}
+
+/* tooltip arrow */
+header nav .social-nav a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 8px;
+    border: 6px solid transparent;
+    border-top-color: #111;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+header nav .social-nav a:hover::after,
+header nav .social-nav a:hover::before,
+header nav .social-nav a:focus::after,
+header nav .social-nav a:focus::before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure existing "nav ul" centering doesn't affect our new layout */
+nav ul { justify-content: center; } /* original rule */
+header nav .main-nav { justify-content: flex-start; }
+header nav .social-nav { justify-content: flex-end; }
+
+
+/* ===== Projects two-column layout ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.projects-col { display: grid; gap: 1.25rem; align-content: start; }
+
+.projects-heading {
+  margin: 0 0 .25rem;
+  font-size: 1.5rem;
+}
+
+/* ===== Image-only cards ===== */
+.image-card {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  cursor: pointer;
+  background: #eee;
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  height: 260px;               /* bigger image size */
+  object-fit: cover;           /* crop nicely */
+  transition: transform .35s ease;
+}
+
+.image-card:hover img,
+.image-card:focus img {
+  transform: scale(1.04);
+}
+
+/* simple label */
+.image-card figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ===== Modal dialog ===== */
+.modal { /* you already had base modal; enriching it */
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 1000;
+}
+
+.modal.is-open { display: block; }
+
+.modal__dialog {
+  max-width: 760px;
+  margin: 5vh auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1.5rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+}
+
+.modal__close {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  float: right;
+  padding: .25rem .5rem;
+}
+
+.modal__content h3 { margin-top: .25rem; font-size: 1.5rem; }
+.modal__content p { font-weight: 400; color: #333; }
+
+/* Buttons inside modal */
+.btn-row { margin-top: .75rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007acc;
+  padding: 0.6rem 1.0rem;        /* slightly larger */
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;            /* slightly larger */
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+.btn:hover { background-color: #005f9a; transform: translateY(-1px); }
+
+/* ===== Responsive: stack on small screens ===== */
+@media (max-width: 900px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .image-card img { height: 220px; }
+}
+
+
+/* ===== Projects sub-nav (tabs) ===== */
+.projects-subnav {
+  display: flex;
+  gap: .5rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.subnav-link {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: .5rem .75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #0a2540;
+}
+
+.subnav-link:hover { background: rgba(0,0,0,.06); }
+.subnav-link.active { background: #007acc; color: #fff; }
+
+/* Hide inactive gallery */
+.gallery[hidden] { display: none !important; }
