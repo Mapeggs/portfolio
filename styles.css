@@ -402,52 +402,72 @@ footer a:hover {
 
 /* === Navbar layout with social icons (top-right) === */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left; /* override previous center */
+  display: flex;
+  flex-direction: column;       /* stack vertically */
+  align-items: center;          /* center horizontally */
+  text-align: center;
 }
 
+/* Make the <nav> a centering container */
 header nav {
+  position: relative;            /* anchor for absolutely-positioned socials */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;       /* center the .nav-left block */
   width: 100%;
 }
 
-/* Left side container (name + links stacked) */
+/* Stack the title above the links and keep them centered */
 header .nav-left {
   display: flex;
-  flex-direction: column;  /* stack name above links */
-  align-items: center;     /* center align */
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  flex: 1;
+  margin: 0 auto;                /* hard-center within nav */
 }
 
-/* Name styling */
+/* Space under your name so the links aren't crowded */
 header .site-title {
-  font-size: 4rem;
-  font-weight: bold;
-  margin: 0;
-  line-height: 1.2;
-  color: white;
+  font-size: 3.25rem;           /* slightly smaller so pills don’t crowd */
+  line-height: 1.1;
+  margin: 0 0 .55rem;
 }
 
-/* Nav links below name */
+
 header .main-nav {
-  list-style: none;
+  gap: 1.2rem;                   /* space between pills */
+}
+
+/* Center the main nav links (override any left-justify rules) */
+header nav .main-nav {
   display: flex;
+  justify-content: center !important;
   gap: 2rem;
-  margin: 0.5rem 0 0;
+  margin: .25rem 0 0;
   padding: 0;
 }
 
-header .main-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-  transition: color 0.2s ease;
+/* Keep social icons in the top-right of the header bar */
+header .social-nav {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
 }
+
+/* Tidy the active/hover look a bit */
+header .main-nav a {
+  font-size: 1.05rem;           /* consistent size */
+  padding: .42rem .8rem;        /* even pill padding */
+  line-height: 1;               /* stops vertical growth */
+  border-radius: 10px;
+}
+header .main-nav a.active {
+  background: rgba(255,255,255,.9);
+  color: #0a2540;
+  font-weight: 800;
+}
+
 header .main-nav a:hover {
   color: #ddd;
 }
@@ -661,35 +681,62 @@ header nav .social-nav { justify-content: flex-end; }
 }
 .btn:hover { background-color: #005f9a; transform: translateY(-1px); }
 
-/* ===== Responsive: stack on small screens ===== */
-@media (max-width: 900px) {
-  .projects-grid { grid-template-columns: 1fr; }
-  .image-card img { height: 220px; }
-}
 
 
-/* ===== Projects sub-nav (tabs) ===== */
+/* === Projects sub-nav (centered tabs with hover) === */
 .projects-subnav {
   display: flex;
-  gap: .5rem;
+  justify-content: center;        /* center in the middle */
+  gap: .6rem;
   border-bottom: 1px solid #e2e8f0;
+  margin: 0 0 1rem;
+  padding: .3rem 0 .45rem;
   margin-bottom: 1rem;
 }
 
 .subnav-link {
   appearance: none;
   border: none;
-  background: transparent;
-  padding: .5rem .75rem;
-  border-radius: 8px;
-  font-weight: 700;
+  background: #f1f5f9;
+  padding: .46rem .9rem;
+  border-radius: 12px;
+  font-weight: 800;
+  line-height: 1;
+  min-height: 2.1rem;    
   font-size: 1rem;
   cursor: pointer;
   color: #0a2540;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.subnav-link:hover {
+  background: #e2e8f0;            /* subtle hover */
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+.subnav-link:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+  background: #e2e8f0;
+}
+.subnav-link.active {
+  background: #007acc;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,.18);
 }
 
-.subnav-link:hover { background: rgba(0,0,0,.06); }
-.subnav-link.active { background: #007acc; color: #fff; }
+/* Keep two columns; make the cards slightly taller to show images nicely */
+.projects-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.image-card img {
+  height: 280px;                  /* slightly bigger visuals */
+}
 
-/* Hide inactive gallery */
-.gallery[hidden] { display: none !important; }
+/* Responsive */
+@media (max-width: 900px) {
+  header .site-title { font-size: 2.6rem; margin-bottom: .45rem; }
+  header .main-nav a { font-size: 0.98rem; padding: .38rem .7rem; }
+  .subnav-link { font-size: .95rem; padding: .4rem .75rem; min-height: 1.9rem; }
+  .projects-subnav { margin-bottom: .75rem; }
+  .image-card img { height: 220px; }
+}
