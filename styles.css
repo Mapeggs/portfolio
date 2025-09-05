@@ -290,7 +290,13 @@ p {
     transform: scale(1.05); /* Slight enlargement on hover */
 }
 
-
+[hidden] { 
+  display: none !important;
+}
+/* (Optional, extra explicit) */
+.projects-grid[hidden] {
+  display: none !important;
+}
 
 /* Modal Background */
 .modal {

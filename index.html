@@ -128,10 +128,19 @@
 
         <!-- Projects Section -->
     <section id="projects" class="page">
-    <div class="projects-subnav" role="tablist" aria-label="Projects categories">
-        <button class="subnav-link active" role="tab" aria-selected="true" data-target="gallery-games">Games</button>
-        <button class="subnav-link" role="tab" aria-selected="false" data-target="gallery-designs">Designs / Artwork</button>
-    </div>
+        <div class="projects-subnav" role="tablist" aria-label="Projects categories">
+            <a class="subnav-link active"
+               role="tab"
+               aria-selected="true"
+               data-target="gallery-games"
+               href="#projects/games">Games</a>
+          
+            <a class="subnav-link"
+               role="tab"
+               aria-selected="false"
+               data-target="gallery-designs"
+               href="#projects/designs">Designs / Artwork</a>
+          </div>
 
     <!-- GAMES gallery (2 columns) -->
     <div id="gallery-games" class="projects-grid gallery">
@@ -148,33 +157,33 @@
 
     <!-- DESIGNS / ARTWORK gallery (2 columns) -->
     <div id="gallery-designs" class="projects-grid gallery" hidden>
-        <figure class="image-card" data-detail="#detail-design1" tabindex="0" aria-label="Open details for Bald Man (3D)">
+        <figure class="image-card" data-detail="#Bald-Man-3D" tabindex="0" aria-label="Open details for Bald Man (3D)">
             <img src="assets/baldman3dblender.png" alt="Bald Man 3D sculpt">
             <figcaption>Bald Man (3D)</figcaption>
         </figure>
 
-        <figure class="image-card" data-detail="#detail-design2" tabindex="0" aria-label="Open details for Heartless (3D)">
+        <figure class="image-card" data-detail="#Heartless-3D" tabindex="0" aria-label="Open details for Heartless (3D)">
             <img src="assets/Heartless3dblender.png" alt="Heartless 3D sculpt">
             <figcaption>Heartless (3D)</figcaption>
         </figure>
 
-        <figure class="image-card" data-detail="#detail-design3" tabindex="0" aria-label="Open details for Heartless Drawing">
+        <figure class="image-card" data-detail="#Heartless-Drawing" tabindex="0" aria-label="Open details for Heartless Drawing">
             <img src="assets/Heartlessdrawing.png" alt="Heartless character drawing in Photoshop">
             <figcaption>Heartless Drawing</figcaption>
         </figure>
 
-        <figure class="image-card" data-detail="#detail-design4" tabindex="0" aria-label="Open details for Radioactive Monkey Sprite">
+        <figure class="image-card" data-detail="#radioactive-monkey" tabindex="0" aria-label="Open details for Radioactive Monkey Sprite">
             <img src="assets/radioactivemonkeyspritesheet.png" alt="Radioactive monkey sprite sheet">
             <figcaption>Radioactive Monkey Sprite</figcaption>
         </figure>
 
-        <figure class="image-card" data-detail="#detail-design5" tabindex="0" aria-label="Open details for Walking Fish Pixel">
+        <figure class="image-card" data-detail="#walking-Fish" tabindex="0" aria-label="Open details for Walking Fish Pixel">
             <img src="assets/walkingfish.png" alt="Walking fish pixel animation">
             <figcaption>Walking Fish (Pixel)</figcaption>
         </figure>
     </div>
 
-    <!-- ===== Detail templates (modal content) ===== -->
+    <!-- ===== Game Detail templates (modal content) ===== -->
     <template id="detail-dodgeball">
         <h3>DodgeBall</h3>
         <p>
@@ -200,16 +209,42 @@
         </div>
     </template>
 
-    <template id="detail-design1">
-        <h3>Design 1</h3>
+
+    <!-- ===== Design / Artwork detail templates (modal content) ===== -->
+    <template id="Bald-Man-3D">
+        <h3>Bald Man 3D</h3>
         <p>Short description of your design or artwork.</p>
         <div class="btn-row">
         <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
         </div>
     </template>
 
-    <template id="detail-design2">
-        <h3>Design 2</h3>
+    <template id="Heartless-3D">
+        <h3>Heartless 3D</h3>
+        <p>Short description of your design or artwork.</p>
+        <div class="btn-row">
+        <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
+        </div>
+    </template>
+
+    <template id="Heartless-Drawing">
+        <h3>Heartless Drawing</h3>
+        <p>Short description of your design or artwork.</p>
+        <div class="btn-row">
+        <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
+        </div>
+    </template>
+
+    <template id="radioactive-monkey">
+        <h3>Radioactive Monkey Sprite</h3>
+        <p>Short description of your design or artwork.</p>
+        <div class="btn-row">
+        <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
+        </div>
+    </template>
+
+    <template id="walking-Fish">
+        <h3>Walking Fish Sprite</h3>
         <p>Short description of your design or artwork.</p>
         <div class="btn-row">
         <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
