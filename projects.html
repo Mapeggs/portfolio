@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anthony Nguyen — Projects</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <h1 class="site-title">Anthony Nguyen</h1>
+        <ul class="main-nav">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+        </ul>
+      </div>
+      <ul class="social-nav" aria-label="External links">
+        <li>
+          <a href="https://www.linkedin.com/in/ant-1aa0a1342" target="_blank" rel="noopener"
+             aria-label="LinkedIn" data-url="linkedin.com/in/ant-1aa0a1342" title="linkedin.com/in/ant-1aa0a1342">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.54c0-1.32-.02-3.01-1.84-3.01-1.84 0-2.12 1.43-2.12 2.91v5.64H9.39V9h3.41v1.56h.05c.47-.9 1.62-1.84 3.34-1.84 3.57 0 4.23 2.35 4.23 5.4v6.33zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22 0H2C.9 0 0 .9 0 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Mapeggs" target="_blank" rel="noopener"
+             aria-label="GitHub" data-url="github.com/Mapeggs" title="github.com/Mapeggs">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 .5C5.73.5.99 5.24.99 11.5c0 4.85 3.15 8.96 7.51 10.41.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.06-3.05.66-3.7-1.3-3.7-1.3-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.66.08-.66 1.1.08 1.68 1.13 1.68 1.13.97 1.67 2.55 1.19 3.17.91.1-.7.38-1.18.69-1.45-2.43-.28-4.99-1.22-4.99-5.42 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.42.11-2.95 0 0 .92-.29 3.01 1.13a10.4 10.4 0 0 1 2.74-.37c.93 0 1.87.12 2.74.37 2.1-1.42 3.01-1.13 3.01-1.13.6 1.53.22 2.67.11 2.95.7.77 1.13 1.75 1.13 2.95 0 4.21-2.57 5.13-5.01 5.41.39.34.73 1 .73 2.02 0 1.45-.01 2.61-.01 2.97 0 .29.2.64.76.53A10.53 10.53 0 0 0 23 11.5C23 5.24 18.27.5 12 .5z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="assets/AntsResume.pdf" target="_blank" rel="noopener"
+             aria-label="Resume" data-url="AntsResume.pdf" title="AntsResume.pdf">
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.11.9 2 2 2h12c1.1 0 2-.89 2-2V8l-6-6zm1 7V3.5L19.5 9H15zM8 13h8v2H8v-2zm0 4h8v2H8v-2zM8 9h4v2H8V9z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Projects sub-nav -->
+    <div class="projects-subnav" role="tablist" aria-label="Projects categories">
+      <a class="subnav-link active" role="tab" aria-selected="true" data-target="gallery-games" href="#games">Games</a>
+      <a class="subnav-link" role="tab" aria-selected="false" data-target="gallery-designs" href="#designs">Designs / Artwork</a>
+    </div>
+
+    <!-- Games -->
+    <div id="gallery-games" class="projects-grid gallery">
+      <figure class="image-card" data-detail="#detail-dodgeball" tabindex="0" aria-label="Open details for DodgeBall">
+        <img src="assets/Dodgeball.png" alt="DodgeBall thumbnail" />
+        <figcaption>DodgeBall</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#detail-house" tabindex="0" aria-label="Open details for House Tour Trailer">
+        <img src="assets/housetour.png" alt="House Tour Trailer thumbnail" />
+        <figcaption>House Tour Trailer</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#detail-robot" tabindex="0" aria-label="Open details for Robot Sorting">
+        <video src="robotsortingvid.mp4" muted autoplay loop playsinline preload="metadata" poster="assets/robot-poster.jpg"></video>
+        <figcaption>Robot Sorting</figcaption>
+      </figure>
+    </div>
+
+    <!-- Designs / Artwork -->
+    <div id="gallery-designs" class="projects-grid gallery" hidden>
+      <figure class="image-card" data-detail="#Bald-Man-3D" tabindex="0" aria-label="Open details for Bald Man (3D)">
+        <img src="assets/baldman3dblender.png" alt="Bald Man 3D sculpt" />
+        <figcaption>Bald Man (3D)</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#Heartless-3D" tabindex="0" aria-label="Open details for Heartless (3D)">
+        <img src="assets/Heartless3dblender.png" alt="Heartless 3D sculpt" />
+        <figcaption>Heartless (3D)</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#Heartless-Drawing" tabindex="0" aria-label="Open details for Heartless Drawing">
+        <img src="assets/Heartlessdrawing.png" alt="Heartless character drawing in Photoshop" />
+        <figcaption>Heartless Drawing</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#radioactive-monkey" tabindex="0" aria-label="Open details for Radioactive Monkey Sprite">
+        <img src="assets/radioactivemonkeyspritesheet.png" alt="Radioactive monkey sprite sheet" />
+        <figcaption>Radioactive Monkey Sprite</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#walking-Fish" tabindex="0" aria-label="Open details for Walking Fish Pixel">
+        <img src="assets/walkingfish.png" alt="Walking fish pixel animation" />
+        <figcaption>Walking Fish (Pixel)</figcaption>
+      </figure>
+    </div>
+
+    <!-- Detail templates -->
+    <template id="detail-dodgeball">
+        <h3>DodgeBall</h3>
+        <div class="modal__media">
+            <img class="modal__image" src="assets/Dodgeball.png" alt="DodgeBall thumbnail" />
+        </div>
+        <p>
+        It's a local multiplayer game where you and your friend each control either Player 1 or Player 2 on the same keyboard.
+        The goal is to throw balls at each other, and the first player to score 3 points wins.
+        </p>
+        <p>
+        Built with JavaScript & Phaser 3, using free assets from itch.io and audio from Pixabay.
+        </p>
+        <div class="btn-row">
+        <a class="btn" href="https://github.com/Mapeggs/DodgeBall" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn" href="https://mapeggs.github.io/DodgeBall/" target="_blank" rel="noopener">Play Now</a>
+        </div>
+    </template>
+
+    <template id="detail-house">
+        <h3>House Tour Trailer</h3>
+        <div class="modal__media">
+          <img class="modal__image" src="assets/housetour.png" alt="House Tour Trailer frame"/>
+        </div>
+        <p>Unity trailer with Timeline contraptions and VFX (fire, rigged door).</p>
+        <div class="btn-row">
+          <a class="btn" href="https://drive.google.com/file/d/11cBgsTozPZuNvnZT2dx_ki56UuUq0NYd/view?usp=drive_link" target="_blank" rel="noopener">View on Google Drive</a>
+        </div>
+      </template>
+
+
+      <template id="detail-robot">
+        <h3>Robot Sorting</h3>
+        <div class="modal__media">
+          <video class="modal__video" src="robotsortingvid.mp4" controls playsinline style="width:100%; max-height:70vh; border-radius:12px;"></video>
+        </div>
+        <p>
+          It's a robot part sorting game that I created for my game design classes at UCSC.  
+          A lot of the art aspect has a mix of AI-generated images, my own creations, and imported assets from itch.io.  
+          Built in LÖVE2D under the constraints: no direct player control, no dialogue, takes place inside a machine, and must include betrayal.
+        </p>
+        <div class="btn-row">
+          <!-- Optional button to GitHub or itch.io if you want -->
+        </div>
+      </template>
+      
+      
+      <template id="Bald-Man-3D">
+        <h3>Bald Man 3D</h3>
+        <div class="modal__media">
+          <img class="modal__image" src="assets/baldman3dblender.png" alt="Bald Man 3D sculpt"/>
+        </div>
+        <p>Created in Blender using basic shapes, some sculpting, and simple color textures.</p>
+        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
+      </template>
+      
+      <template id="Heartless-3D">
+        <h3>Heartless 3D</h3>
+        <div class="modal__media">
+          <img class="modal__image" src="assets/Heartless3dblender.png" alt="Heartless 3D sculpt"/>
+        </div>
+        <p>Body/muscles referenced from a gym influencer; head inspired by Kingdom Hearts’ Heartless.</p>
+        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
+      </template>
+      
+      <template id="Heartless-Drawing">
+        <h3>Heartless Drawing</h3>
+        <div class="modal__media">
+          <img class="modal__image" src="assets/Heartlessdrawing.png" alt="Heartless character drawing"/>
+        </div>
+        <p>Photoshop drawing exploring silhouette + style language.</p>
+        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
+      </template>
+      
+      <template id="radioactive-monkey">
+        <h3>Radioactive Monkey Sprite</h3>
+        <div class="modal__media">
+          <img class="modal__image" src="assets/radioactivemonkeyspritesheet.png" alt="Radioactive Monkey sprite sheet"/>
+        </div>
+        <p>Pixel-art sprite sheet—idle/walk cycles.</p>
+        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
+      </template>
+      
+      <template id="walking-Fish">
+        <h3>Walking Fish Sprite</h3>
+        <div class="modal__media">
+          <img class="modal__image" src="assets/walkingfish.png" alt="Walking Fish pixel animation"/>
+        </div>
+        <p>Looped pixel animation experimenting with comedic motion.</p>
+        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
+      </template>
+      
+
+    <!-- Modal -->
+    <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-label="Project details">
+      <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close details">&times;</button>
+        <div class="modal__content">
+            <h3 class="modal__title"></h3>
+            <div class="modal__media">
+              <img class="modal__image" src="" alt="" />
+            </div>
+            <p class="modal__desc"></p>
+            <a class="btn modal__cta" href="#" target="_blank" rel="noopener">See More</a>
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

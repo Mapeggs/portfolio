@@ -157,4 +157,69 @@ document.addEventListener('DOMContentLoaded', () => {
   // Set initial tab from the current hash
   const initial = location.hash.startsWith('#projects/designs') ? 'gallery-designs' : 'gallery-games';
   window.showGallery(initial);
+
+
+  // Utility: show/hide helper for the modal image block
+function setModalImage(modal, src, altText) {
+  const media = modal.querySelector('.modal__media');
+  const img   = modal.querySelector('.modal__image');
+
+  if (src) {
+    img.src = src;
+    img.alt = altText || '';
+    media.style.display = '';
+  } else {
+    // no image for this item → hide media block
+    img.removeAttribute('src');
+    img.alt = '';
+    media.style.display = 'none';
+  }
+}
+
+// Attach once after DOMContentLoaded
+document.addEventListener('click', (e) => {
+  const card = e.target.closest('.project-card');
+  if (!card) return;
+
+  const modal = document.querySelector('#projectModal');
+  if (!modal) return;
+
+  // Pull data from the card
+  const title = card.dataset.title || card.querySelector('h3')?.textContent || 'Untitled';
+  const desc  = card.dataset.desc  || '';
+  const image = card.dataset.image || card.querySelector('img')?.src || '';
+  const link  = card.dataset.link  || '';
+
+  // Fill modal fields
+  modal.querySelector('.modal__title').textContent = title;
+  modal.querySelector('.modal__desc').textContent  = desc;
+
+  // NEW: set image
+  setModalImage(modal, image, title);
+
+  // Optional: CTA
+  const cta = modal.querySelector('.modal__cta');
+  if (cta) {
+    if (link) {
+      cta.href = link;
+      cta.style.display = '';
+    } else {
+      cta.removeAttribute('href');
+      cta.style.display = 'none';
+    }
+  }
+
+  // Open the modal (use your existing open logic if you have it)
+  document.body.classList.add('modal-open');
+  modal.setAttribute('aria-hidden', 'false');
+});
+
+// Close button (keep your existing logic if present)
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.modal__close') || e.target.closest('.modal__close')) {
+    const modal = document.querySelector('#projectModal');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+});
 })();
