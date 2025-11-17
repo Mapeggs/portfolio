@@ -60,37 +60,25 @@
       </figure>
 
       <figure class="image-card" data-detail="#detail-robot" tabindex="0" aria-label="Open details for Robot Sorting">
-        <video src="robotsortingvid.mp4" muted autoplay loop playsinline preload="metadata" poster="assets/robot-poster.jpg"></video>
+        <video src="robotsortingvid.mp4" muted autoplay loop playsinline preload="metadata" poster="assets/robotsorting.png"></video>
         <figcaption>Robot Sorting</figcaption>
       </figure>
     </div>
 
     <!-- Designs / Artwork -->
     <div id="gallery-designs" class="projects-grid gallery" hidden>
-      <figure class="image-card" data-detail="#Bald-Man-3D" tabindex="0" aria-label="Open details for Bald Man (3D)">
+      <!-- <figure class="image-card" data-detail="#Bald-Man-3D" tabindex="0" aria-label="Open details for Bald Man (3D)">
         <img src="assets/baldman3dblender.png" alt="Bald Man 3D sculpt" />
         <figcaption>Bald Man (3D)</figcaption>
+      </figure> -->
+
+      <figure class="image-card" data-detail="#detail-monster" tabindex="0" aria-label="Open details for 3D Model Monster">
+        <img src="assets/CharacterRuncycle.gif" alt="3D Model Monster" />
+        <figcaption>3D Model Monster</figcaption>
       </figure>
 
-      <figure class="image-card" data-detail="#Heartless-3D" tabindex="0" aria-label="Open details for Heartless (3D)">
-        <img src="assets/Heartless3dblender.png" alt="Heartless 3D sculpt" />
-        <figcaption>Heartless (3D)</figcaption>
-      </figure>
 
-      <figure class="image-card" data-detail="#Heartless-Drawing" tabindex="0" aria-label="Open details for Heartless Drawing">
-        <img src="assets/Heartlessdrawing.png" alt="Heartless character drawing in Photoshop" />
-        <figcaption>Heartless Drawing</figcaption>
-      </figure>
-
-      <figure class="image-card" data-detail="#radioactive-monkey" tabindex="0" aria-label="Open details for Radioactive Monkey Sprite">
-        <img src="assets/radioactivemonkeyspritesheet.png" alt="Radioactive monkey sprite sheet" />
-        <figcaption>Radioactive Monkey Sprite</figcaption>
-      </figure>
-
-      <figure class="image-card" data-detail="#walking-Fish" tabindex="0" aria-label="Open details for Walking Fish Pixel">
-        <img src="assets/walkingfish.png" alt="Walking fish pixel animation" />
-        <figcaption>Walking Fish (Pixel)</figcaption>
-      </figure>
+ 
     </div>
 
     <!-- Detail templates -->
@@ -124,66 +112,35 @@
       </template>
 
 
-      <template id="detail-robot">
-        <h3>Robot Sorting</h3>
-        <div class="modal__media">
-          <video class="modal__video" src="robotsortingvid.mp4" controls playsinline style="width:100%; max-height:70vh; border-radius:12px;"></video>
+    <template id="detail-robot">
+      <h3>Robot Sorting</h3>
+      <div class="modal__media">
+        <video class="modal__video" src="robotsortingvid.mp4" controls playsinline style="width:100%; max-height:70vh; border-radius:12px;"></video>
+      </div>
+      <p>
+        It's a robot part sorting game that I created for my game design classes at UCSC.  
+        A lot of the art aspect has a mix of AI-generated images, my own creations, and imported assets from itch.io.  
+        Built in LÖVE2D under the constraints: no direct player control, no dialogue, takes place inside a machine, and must include betrayal.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
+      </div>
+    </template>
+
+    <template id="detail-monster">
+      <h3>3D Model Monster</h3>
+      <div class="modal__media">
+          <img class="modal__image" src="assets/CharacterRuncycle.gif" alt="3D Model Monster"/>
         </div>
-        <p>
-          It's a robot part sorting game that I created for my game design classes at UCSC.  
-          A lot of the art aspect has a mix of AI-generated images, my own creations, and imported assets from itch.io.  
-          Built in LÖVE2D under the constraints: no direct player control, no dialogue, takes place inside a machine, and must include betrayal.
+        <p>Designed and modeled a custom crawling monster inspired by the Kingdom Hearts series, starting with original concept art created in Photoshop. 
+          Built and rigged the full 3D model in Blender and animated a dynamic crawling cycle. Demonstrated strong iterative design skills by refining topology, materials, 
+          and movement to achieve a more polished, game-ready character. 
         </p>
-        <div class="btn-row">
-          <!-- Optional button to GitHub or itch.io if you want -->
-        </div>
+        <div class="btn-row"><a class="btn" href="https://drive.google.com/drive/folders/1nZ7thPAf3cv5rnjBFKSuHpzndpeAx9Ka?usp=sharing" target="_blank" rel="noopener">See More</a></div>
       </template>
       
+
       
-      <template id="Bald-Man-3D">
-        <h3>Bald Man 3D</h3>
-        <div class="modal__media">
-          <img class="modal__image" src="assets/baldman3dblender.png" alt="Bald Man 3D sculpt"/>
-        </div>
-        <p>Created in Blender using basic shapes, some sculpting, and simple color textures.</p>
-        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
-      </template>
-      
-      <template id="Heartless-3D">
-        <h3>Heartless 3D</h3>
-        <div class="modal__media">
-          <img class="modal__image" src="assets/Heartless3dblender.png" alt="Heartless 3D sculpt"/>
-        </div>
-        <p>Body/muscles referenced from a gym influencer; head inspired by Kingdom Hearts’ Heartless.</p>
-        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
-      </template>
-      
-      <template id="Heartless-Drawing">
-        <h3>Heartless Drawing</h3>
-        <div class="modal__media">
-          <img class="modal__image" src="assets/Heartlessdrawing.png" alt="Heartless character drawing"/>
-        </div>
-        <p>Photoshop drawing exploring silhouette + style language.</p>
-        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
-      </template>
-      
-      <template id="radioactive-monkey">
-        <h3>Radioactive Monkey Sprite</h3>
-        <div class="modal__media">
-          <img class="modal__image" src="assets/radioactivemonkeyspritesheet.png" alt="Radioactive Monkey sprite sheet"/>
-        </div>
-        <p>Pixel-art sprite sheet—idle/walk cycles.</p>
-        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
-      </template>
-      
-      <template id="walking-Fish">
-        <h3>Walking Fish Sprite</h3>
-        <div class="modal__media">
-          <img class="modal__image" src="assets/walkingfish.png" alt="Walking Fish pixel animation"/>
-        </div>
-        <p>Looped pixel animation experimenting with comedic motion.</p>
-        <div class="btn-row"><a class="btn" href="#" target="_blank" rel="noopener">See More</a></div>
-      </template>
       
 
     <!-- Modal -->
