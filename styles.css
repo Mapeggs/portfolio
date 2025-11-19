@@ -682,6 +682,38 @@ footer a:hover {
   text-decoration: underline;
 }
 
+
+/* 8-Bit Audio Swap layout */
+.audio-swap-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.audio-swap-item {
+  flex: 1 1 260px;
+  max-width: 360px;
+  text-align: center;
+}
+
+.audio-swap-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* keeps them from getting super wide/tall */
+  border-radius: 16px;
+  object-fit: cover;      /* or "contain" if you prefer full frame */
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+}
+
+.audio-swap-label {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #cbd5f5;
+}  
+
 /* ============== Responsive ============== */
 
 @media (max-width: 900px) {
@@ -726,6 +758,9 @@ footer a:hover {
     margin: 4vh 1rem;
   }
 }
+
+
+
 
 @media (max-width: 600px) {
   .projects-grid {

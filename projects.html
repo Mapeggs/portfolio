@@ -77,6 +77,11 @@
         <figcaption>3D Model Monster</figcaption>
       </figure>
 
+      <figure class="image-card" data-detail="#detail-8-bit" tabindex="0" aria-label="Open details for 8-Bit Retro Audio Swap">
+        <img src="assets/Retro8bit.gif" alt="Retrogif" />
+        <figcaption>8-Bit Retro Audio Swap</figcaption>
+      </figure>
+
 
  
     </div>
@@ -88,11 +93,8 @@
             <img class="modal__image" src="assets/Dodgeball.png" alt="DodgeBall thumbnail" />
         </div>
         <p>
-        It's a local multiplayer game where you and your friend each control either Player 1 or Player 2 on the same keyboard.
-        The goal is to throw balls at each other, and the first player to score 3 points wins.
-        </p>
-        <p>
-        Built with JavaScript & Phaser 3, using free assets from itch.io and audio from Pixabay.
+          A local multiplayer game built with JavaScript and Phaser 3, where two players compete on the same keyboard. Each player controls either Player 1 or Player 2, aiming to hit their
+          opponent with dodgeballs. The first to reach 3 points wins. Developed using free assets from itch.io, the game emphasizes fast-paced gameplay and simple, engaging mechanics.
         </p>
         <div class="btn-row">
         <a class="btn" href="https://github.com/Mapeggs/DodgeBall" target="_blank" rel="noopener">View on GitHub</a>
@@ -105,22 +107,25 @@
         <div class="modal__media">
           <img class="modal__image" src="assets/housetour.png" alt="House Tour Trailer frame"/>
         </div>
-        <p>Unity trailer with Timeline contraptions and VFX (fire, rigged door).</p>
+        <p>A cinematic house tour experience created in Unity, designed to simulate a dynamic walkthrough. Using camera configurations and timeline managers, I implemented scripted 
+          contraptions that trigger at specific times, showcasing visual effects such as fire and a rigged door animation. By combining Unity’s particle systems, timeline events, and 
+          free assets from the Unity Store, I crafted an immersive, game-like trailer experience.
+        </p>
         <div class="btn-row">
           <a class="btn" href="https://drive.google.com/file/d/11cBgsTozPZuNvnZT2dx_ki56UuUq0NYd/view?usp=drive_link" target="_blank" rel="noopener">View on Google Drive</a>
         </div>
       </template>
 
-
     <template id="detail-robot">
       <h3>Robot Sorting</h3>
       <div class="modal__media">
-        <video class="modal__video" src="robotsortingvid.mp4" controls playsinline style="width:100%; max-height:70vh; border-radius:12px;"></video>
+        <video class="modal__video" src="assets/robotsortingvid.mp4" controls playsinline style="width:100%; max-height:70vh; border-radius:12px;"></video>
       </div>
       <p>
-        It's a robot part sorting game that I created for my game design classes at UCSC.  
-        A lot of the art aspect has a mix of AI-generated images, my own creations, and imported assets from itch.io.  
-        Built in LÖVE2D under the constraints: no direct player control, no dialogue, takes place inside a machine, and must include betrayal.
+        A large portion of the visual style combines AI-generated artwork, my own hand-crafted assets, and additional resources imported from itch.io. The project was built in LÖVE2D under a 
+        unique set of design constraints: the player cannot directly control a character, there is no dialogue, the entire experience takes place inside a machine, and the narrative must 
+        incorporate a theme of betrayal. These limitations pushed me to experiment with environmental storytelling, reactive systems, and mechanical tension to create a more atmospheric and 
+        expressive gameplay experience.
       </p>
       <div class="btn-row">
         <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
@@ -132,12 +137,49 @@
       <div class="modal__media">
           <img class="modal__image" src="assets/CharacterRuncycle.gif" alt="3D Model Monster"/>
         </div>
-        <p>Designed and modeled a custom crawling monster inspired by the Kingdom Hearts series, starting with original concept art created in Photoshop. 
+        <p>
+          Designed and modeled a custom crawling monster inspired by the Kingdom Hearts series, starting with original concept art created in Photoshop. 
           Built and rigged the full 3D model in Blender and animated a dynamic crawling cycle. Demonstrated strong iterative design skills by refining topology, materials, 
           and movement to achieve a more polished, game-ready character. 
         </p>
         <div class="btn-row"><a class="btn" href="https://drive.google.com/drive/folders/1nZ7thPAf3cv5rnjBFKSuHpzndpeAx9Ka?usp=sharing" target="_blank" rel="noopener">See More</a></div>
       </template>
+
+
+    <template id="detail-8-bit">
+      <h3>8-Bit Retro Audio Swap</h3>
+      <div class="modal__media audio-swap-grid">
+        <div class="audio-swap-item">
+        <video
+          class="modal__video audio-swap-video"
+          src="assets/Original.mp4"
+          controls
+          playsinline
+          preload="metadata">
+        </video>
+        <p class="audio-swap-label">Original Game Audio</p>
+      </div>
+
+      <div class="audio-swap-item">
+        <video
+          class="modal__video audio-swap-video"
+          src="assets/AudioSwap.mp4"
+          controls
+          playsinline
+          preload="metadata">
+        </video>
+        <p class="audio-swap-label">8-Bit Audio Swap (My Edit)</p>
+      </div>
+    </div>
+  </div>
+  <p>
+    Created an 8 bit retro-style audio swap for a game scene using Reaper. The project involved extracting the original audio &amp; video from the game Stealth by Richard E. Sansom &amp; Tracy Lagrone and replacing it
+    with my own custom 8-bit style audio while keeping the original video intact. This project showcases my ability to manipulate and enhance existing game assets to enhance the gaming experience.
+  </p>
+  <div class="btn-row">
+    <a class="btn" href="#" target="_blank" rel="noopener">See More</a>
+  </div>
+</template>
       
 
       
