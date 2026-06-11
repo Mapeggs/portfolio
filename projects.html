@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anthony Nguyen — Projects</title>
   <link rel="stylesheet" href="styles.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <header>
@@ -50,7 +50,8 @@
     <!-- Projects sub-nav -->
     <div class="projects-subnav" role="tablist" aria-label="Projects categories">
       <a class="subnav-link active" role="tab" aria-selected="true" data-target="gallery-games" href="#games">Games</a>
-      <a class="subnav-link" role="tab" aria-selected="false" data-target="gallery-designs" href="#designs">Designs / Artwork</a>
+      <a class="subnav-link" role="tab" aria-selected="false" data-target="gallery-designs" href="#designs">Artwork / Design</a>
+      <a class="subnav-link" role="tab" aria-selected="false" data-target="gallery-hacks" href="#hacks">Hacks</a>
     </div>
 
     <!-- Games -->
@@ -97,7 +98,85 @@
  
     </div>
 
+    <!-- Hacks -->
+    <div id="gallery-hacks" class="projects-grid gallery" hidden>
+      <figure class="image-card" data-detail="#detail-cubcrawl-hack" tabindex="0" aria-label="Open details for CubCrawl HackDavis 2026">
+        <img src="assets/png/cubcrawl-mobile-home.png" alt="CubCrawl mobile app mockup" />
+        <figcaption>CubCrawl</figcaption>
+      </figure>
+    </div>
+
     <!-- Detail templates -->
+    <template id="detail-cubcrawl-hack">
+      <h3>CubCrawl — HackDavis 2026</h3>
+      <p>
+        CubCrawl is a campus-focused social thread platform built for HackDavis 2026. The project helps students discover clubs, follow updates, view events, and explore campus communities through a cleaner feed-style experience made for university life.
+      </p>
+      <p>
+        My contribution focused on the visual direction and front-end experience, including mobile app mockups in Figma and a responsive website built with HTML, CSS, and JavaScript. The concept uses .edu emails to connect students to their school, then organizes club posts through For You, Following, Explore, Alerts, and Profile sections.
+      </p>
+
+      <div class="hack-project-meta" aria-label="CubCrawl project highlights">
+        <span>HackDavis 2026</span>
+        <span>Figma Prototype</span>
+        <span>HTML / CSS / JavaScript</span>
+        <span>Campus Club Platform</span>
+      </div>
+
+      <div class="modal__media hack-carousel" data-carousel>
+        <div class="hack-carousel__header">
+          <h4>Project Screenshots</h4>
+          <p>Use the arrows or scroll horizontally to view the mobile mockups and website pages.</p>
+        </div>
+        <div class="hack-carousel__shell">
+          <button class="hack-carousel__btn hack-carousel__btn--prev" type="button" data-carousel-direction="prev" aria-label="Previous CubCrawl image">&#8249;</button>
+          <div class="hack-carousel__viewport" tabindex="0" aria-label="Scrollable CubCrawl screenshot gallery">
+            <div class="hack-carousel__track">
+              <figure class="hack-carousel__slide">
+                <img src="assets/png/cubcrawl-mobile-login.png" alt="CubCrawl mobile login screen" />
+                <figcaption>Mobile login screen</figcaption>
+              </figure>
+              <figure class="hack-carousel__slide">
+                <img src="assets/png/cubcrawl-mobile-home.png" alt="CubCrawl mobile home feed" />
+                <figcaption>Mobile home feed</figcaption>
+              </figure>
+              <figure class="hack-carousel__slide">
+                <img src="assets/png/cubcrawl-mobile-profile.png" alt="CubCrawl mobile profile page" />
+                <figcaption>Mobile profile page</figcaption>
+              </figure>
+              <figure class="hack-carousel__slide">
+                <img src="assets/png/cubcrawl-mobile-alerts.png" alt="CubCrawl mobile alerts page" />
+                <figcaption>Mobile alerts page</figcaption>
+              </figure>
+              <figure class="hack-carousel__slide hack-carousel__slide--wide">
+                <img src="assets/png/cubcrawl-website-home.png" alt="CubCrawl website home feed" />
+                <figcaption>Website home feed</figcaption>
+              </figure>
+              <figure class="hack-carousel__slide hack-carousel__slide--wide">
+                <img src="assets/png/cubcrawl-website-explore.png" alt="CubCrawl website explore page" />
+                <figcaption>Website explore page</figcaption>
+              </figure>
+            </div>
+          </div>
+          <button class="hack-carousel__btn hack-carousel__btn--next" type="button" data-carousel-direction="next" aria-label="Next CubCrawl image">&#8250;</button>
+        </div>
+        <div class="hack-carousel__dots" aria-label="CubCrawl screenshot position">
+          <button class="hack-carousel__dot is-active" type="button" data-carousel-dot="0" aria-label="Show screenshot 1"></button>
+          <button class="hack-carousel__dot" type="button" data-carousel-dot="1" aria-label="Show screenshot 2"></button>
+          <button class="hack-carousel__dot" type="button" data-carousel-dot="2" aria-label="Show screenshot 3"></button>
+          <button class="hack-carousel__dot" type="button" data-carousel-dot="3" aria-label="Show screenshot 4"></button>
+          <button class="hack-carousel__dot" type="button" data-carousel-dot="4" aria-label="Show screenshot 5"></button>
+          <button class="hack-carousel__dot" type="button" data-carousel-dot="5" aria-label="Show screenshot 6"></button>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn" href="https://devpost.com/software/cubcrawl" target="_blank" rel="noopener">View Devpost</a>
+        <a class="btn" href="https://jqmesle.github.io/Cub-Crawl/" target="_blank" rel="noopener">Open Website</a>
+        <a class="btn" href="https://www.figma.com/proto/IkAN0gViYmFaACfiuSLJ1y/CubCrawl?node-id=33-61&p=f&t=F2e9Ib9JBKEB5eDv-1&scaling=scale-down&content-scaling=fixed&page-id=3%3A7&starting-point-node-id=33%3A61" target="_blank" rel="noopener">View Figma Prototype</a>
+      </div>
+    </template>
+
     <template id="detail-lone-stick">
       <h3>The Lone Stick</h3>
       <div class="modal__media">
@@ -118,31 +197,49 @@
     <template id="detail-lone-stick-animations">
       <h3>The Lone Stick Animation Collection</h3>
       <p>
-        Here are some of the collection of character and enemy animations I created for The Lone Stick
+        A collection of character and enemy animations I created for The Lone Stick, shown together in one looping animation showcase instead of separated into individual project cards. Click any animation to enlarge it for a closer view.
       </p>
       <div class="modal__media lone-stick-animation-grid">
         <div class="animation-showcase-item">
-          <video class="modal__video animation-showcase-video" src="assets/mp4/Branch.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <button class="animation-zoom-button" type="button" data-zoom-src="assets/mp4/Branch.mp4" data-zoom-title="Branch" aria-label="Expand Branch animation">
+            <video class="modal__video animation-showcase-video" src="assets/mp4/Branch.mp4" muted autoplay loop playsinline preload="metadata"></video>
+            <span class="animation-zoom-hint">Click to enlarge</span>
+          </button>
           <p class="animation-showcase-label">Branch</p>
         </div>
         <div class="animation-showcase-item">
-          <video class="modal__video animation-showcase-video" src="assets/mp4/ToxicSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <button class="animation-zoom-button" type="button" data-zoom-src="assets/mp4/ToxicSpider.mp4" data-zoom-title="Toxic Spider" aria-label="Expand Toxic Spider animation">
+            <video class="modal__video animation-showcase-video" src="assets/mp4/ToxicSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+            <span class="animation-zoom-hint">Click to enlarge</span>
+          </button>
           <p class="animation-showcase-label">Toxic Spider</p>
         </div>
         <div class="animation-showcase-item">
-          <video class="modal__video animation-showcase-video" src="assets/mp4/WolfSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <button class="animation-zoom-button" type="button" data-zoom-src="assets/mp4/WolfSpider.mp4" data-zoom-title="Wolf Spider" aria-label="Expand Wolf Spider animation">
+            <video class="modal__video animation-showcase-video" src="assets/mp4/WolfSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+            <span class="animation-zoom-hint">Click to enlarge</span>
+          </button>
           <p class="animation-showcase-label">Wolf Spider</p>
         </div>
         <div class="animation-showcase-item">
-          <video class="modal__video animation-showcase-video" src="assets/mp4/RangedNinja.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <button class="animation-zoom-button" type="button" data-zoom-src="assets/mp4/RangedNinja.mp4" data-zoom-title="Ranged Ninja" aria-label="Expand Ranged Ninja animation">
+            <video class="modal__video animation-showcase-video" src="assets/mp4/RangedNinja.mp4" muted autoplay loop playsinline preload="metadata"></video>
+            <span class="animation-zoom-hint">Click to enlarge</span>
+          </button>
           <p class="animation-showcase-label">Ranged Ninja</p>
         </div>
         <div class="animation-showcase-item">
-          <video class="modal__video animation-showcase-video" src="assets/mp4/NinjaWarrior.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <button class="animation-zoom-button" type="button" data-zoom-src="assets/mp4/NinjaWarrior.mp4" data-zoom-title="Ninja Warrior" aria-label="Expand Ninja Warrior animation">
+            <video class="modal__video animation-showcase-video" src="assets/mp4/NinjaWarrior.mp4" muted autoplay loop playsinline preload="metadata"></video>
+            <span class="animation-zoom-hint">Click to enlarge</span>
+          </button>
           <p class="animation-showcase-label">Ninja Warrior</p>
         </div>
         <div class="animation-showcase-item">
-          <video class="modal__video animation-showcase-video" src="assets/mp4/NormalSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <button class="animation-zoom-button" type="button" data-zoom-src="assets/mp4/NormalSpider.mp4" data-zoom-title="Normal Spider" aria-label="Expand Normal Spider animation">
+            <video class="modal__video animation-showcase-video" src="assets/mp4/NormalSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+            <span class="animation-zoom-hint">Click to enlarge</span>
+          </button>
           <p class="animation-showcase-label">Normal Spider</p>
         </div>
       </div>
@@ -258,6 +355,15 @@
             <p class="modal__desc"></p>
             <a class="btn modal__cta" href="#" target="_blank" rel="noopener">See More</a>
           </div>
+      </div>
+    </div>
+
+    <!-- Enlarged animation viewer -->
+    <div class="media-lightbox" id="mediaLightbox" aria-hidden="true" role="dialog" aria-label="Expanded animation viewer">
+      <div class="media-lightbox__dialog" role="document">
+        <button class="media-lightbox__close" type="button" aria-label="Close expanded animation">&times;</button>
+        <h3 class="media-lightbox__title">Animation Preview</h3>
+        <video class="media-lightbox__video" muted autoplay loop playsinline controls></video>
       </div>
     </div>
   </main>
