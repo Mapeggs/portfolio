@@ -31,9 +31,15 @@
           </a>
         </li>
         <li>
-          <a href="assets/AntsResume.pdf" target="_blank" rel="noopener"
-             aria-label="Resume" data-url="AntsResume.pdf" title="AntsResume.pdf">
-            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.11.9 2 2 2h12c1.1 0 2-.89 2-2V8l-6-6zm1 7V3.5L19.5 9H15zM8 13h8v2H8v-2zm0 4h8v2H8v-2zM8 9h4v2H8V9z"/></svg>
+          <a class="resume-badge-link" href="assets/resume/Design_Animation%20Ant%27s%20Resume.pdf" target="_blank" rel="noopener"
+             aria-label="Design and Animation Resume" data-url="Design / Animation Resume" title="Design / Animation Resume">
+            <span class="resume-badge" aria-hidden="true">D/A</span>
+          </a>
+        </li>
+        <li>
+          <a class="resume-badge-link" href="assets/resume/Technical%20Ant%27s%20Resume.pdf" target="_blank" rel="noopener"
+             aria-label="Technical Resume" data-url="Technical Resume" title="Technical Resume">
+            <span class="resume-badge" aria-hidden="true">TECH</span>
           </a>
         </li>
       </ul>
@@ -50,36 +56,41 @@
     <!-- Games -->
     <div id="gallery-games" class="projects-grid gallery">
       <figure class="image-card" data-detail="#detail-dodgeball" tabindex="0" aria-label="Open details for DodgeBall">
-        <img src="assets/Dodgeball.png" alt="DodgeBall thumbnail" />
+        <img src="assets/png/Dodgeball.png" alt="DodgeBall thumbnail" />
         <figcaption>DodgeBall</figcaption>
       </figure>
 
       <figure class="image-card" data-detail="#detail-house" tabindex="0" aria-label="Open details for House Tour Trailer">
-        <img src="assets/housetour.png" alt="House Tour Trailer thumbnail" />
+        <img src="assets/png/housetour.png" alt="House Tour Trailer thumbnail" />
         <figcaption>House Tour Trailer</figcaption>
       </figure>
 
       <figure class="image-card" data-detail="#detail-robot" tabindex="0" aria-label="Open details for Robot Sorting">
-        <video src="robotsortingvid.mp4" muted autoplay loop playsinline preload="metadata" poster="assets/robotsorting.png"></video>
+        <video src="assets/mp4/robotsortingvid.mp4" muted autoplay loop playsinline preload="metadata" poster="assets/png/robotsorting.png"></video>
         <figcaption>Robot Sorting</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#detail-lone-stick" tabindex="0" aria-label="Open details for The Lone Stick">
+        <img src="assets/png/the-lone-stick-cover.png" alt="The Lone Stick cover art" />
+        <figcaption>The Lone Stick</figcaption>
       </figure>
     </div>
 
     <!-- Designs / Artwork -->
     <div id="gallery-designs" class="projects-grid gallery" hidden>
-      <!-- <figure class="image-card" data-detail="#Bald-Man-3D" tabindex="0" aria-label="Open details for Bald Man (3D)">
-        <img src="assets/baldman3dblender.png" alt="Bald Man 3D sculpt" />
-        <figcaption>Bald Man (3D)</figcaption>
-      </figure> -->
-
       <figure class="image-card" data-detail="#detail-monster" tabindex="0" aria-label="Open details for 3D Model Monster">
-        <img src="assets/CharacterRuncycle.gif" alt="3D Model Monster" />
+        <img src="assets/gif/CharacterRuncycle.gif" alt="3D Model Monster" />
         <figcaption>3D Model Monster</figcaption>
       </figure>
 
       <figure class="image-card" data-detail="#detail-8-bit" tabindex="0" aria-label="Open details for 8-Bit Retro Audio Swap">
-        <img src="assets/Retro8bit.gif" alt="Retrogif" />
+        <img src="assets/gif/Retro8bit.gif" alt="Retrogif" />
         <figcaption>8-Bit Retro Audio Swap</figcaption>
+      </figure>
+
+      <figure class="image-card" data-detail="#detail-lone-stick-animations" tabindex="0" aria-label="Open animations for The Lone Stick">
+        <img src="assets/png/the-lone-stick-cover.png" alt="The Lone Stick animation collection cover" />
+        <figcaption>The Lone Stick Animations</figcaption>
       </figure>
 
 
@@ -87,10 +98,60 @@
     </div>
 
     <!-- Detail templates -->
+    <template id="detail-lone-stick">
+      <h3>The Lone Stick</h3>
+      <div class="modal__media">
+        <img class="modal__image" src="assets/png/the-lone-stick-cover.png" alt="The Lone Stick cover art" />
+      </div>
+      <p>
+        The Lone Stick is a linear, combat-heavy platformer where you play as Branch, a stick figure fighting through a stylized island ruled by two warlords. After Branch's adoptive father is killed by his brother and followers, Branch takes up his sword to get revenge on everyone standing in his way.
+      </p>
+      <p>
+        The game focuses on handcrafted levels, enemies, and bosses while letting players dash, jump, attack, platform, collect gold from defeated enemies, and use shops to upgrade their character.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="https://store.steampowered.com/app/4744560/The_Lone_Stick/?l=bulgarian" target="_blank" rel="noopener">View on Steam</a>
+        <button class="btn" type="button" data-open-detail="#detail-lone-stick-animations" data-open-gallery="gallery-designs">View Animations</button>
+      </div>
+    </template>
+
+    <template id="detail-lone-stick-animations">
+      <h3>The Lone Stick Animation Collection</h3>
+      <p>
+        Here are some of the collection of character and enemy animations I created for The Lone Stick
+      </p>
+      <div class="modal__media lone-stick-animation-grid">
+        <div class="animation-showcase-item">
+          <video class="modal__video animation-showcase-video" src="assets/mp4/Branch.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <p class="animation-showcase-label">Branch</p>
+        </div>
+        <div class="animation-showcase-item">
+          <video class="modal__video animation-showcase-video" src="assets/mp4/ToxicSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <p class="animation-showcase-label">Toxic Spider</p>
+        </div>
+        <div class="animation-showcase-item">
+          <video class="modal__video animation-showcase-video" src="assets/mp4/WolfSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <p class="animation-showcase-label">Wolf Spider</p>
+        </div>
+        <div class="animation-showcase-item">
+          <video class="modal__video animation-showcase-video" src="assets/mp4/RangedNinja.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <p class="animation-showcase-label">Ranged Ninja</p>
+        </div>
+        <div class="animation-showcase-item">
+          <video class="modal__video animation-showcase-video" src="assets/mp4/NinjaWarrior.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <p class="animation-showcase-label">Ninja Warrior</p>
+        </div>
+        <div class="animation-showcase-item">
+          <video class="modal__video animation-showcase-video" src="assets/mp4/NormalSpider.mp4" muted autoplay loop playsinline preload="metadata"></video>
+          <p class="animation-showcase-label">Normal Spider</p>
+        </div>
+      </div>
+    </template>
+
     <template id="detail-dodgeball">
         <h3>DodgeBall</h3>
         <div class="modal__media">
-            <img class="modal__image" src="assets/Dodgeball.png" alt="DodgeBall thumbnail" />
+            <img class="modal__image" src="assets/png/Dodgeball.png" alt="DodgeBall thumbnail" />
         </div>
         <p>
           A local multiplayer game built with JavaScript and Phaser 3, where two players compete on the same keyboard. Each player controls either Player 1 or Player 2, aiming to hit their
@@ -105,7 +166,7 @@
     <template id="detail-house">
         <h3>House Tour Trailer</h3>
         <div class="modal__media">
-          <img class="modal__image" src="assets/housetour.png" alt="House Tour Trailer frame"/>
+          <img class="modal__image" src="assets/png/housetour.png" alt="House Tour Trailer frame"/>
         </div>
         <p>A cinematic house tour experience created in Unity, designed to simulate a dynamic walkthrough. Using camera configurations and timeline managers, I implemented scripted 
           contraptions that trigger at specific times, showcasing visual effects such as fire and a rigged door animation. By combining Unity’s particle systems, timeline events, and 
@@ -119,7 +180,7 @@
     <template id="detail-robot">
       <h3>Robot Sorting</h3>
       <div class="modal__media">
-        <video class="modal__video" src="assets/robotsortingvid.mp4" controls playsinline style="width:100%; max-height:70vh; border-radius:12px;"></video>
+        <video class="modal__video" src="assets/mp4/robotsortingvid.mp4" controls playsinline style="width:100%; max-height:70vh; border-radius:12px;"></video>
       </div>
       <p>
         A large portion of the visual style combines AI-generated artwork, my own hand-crafted assets, and additional resources imported from itch.io. The project was built in LÖVE2D under a 
@@ -135,7 +196,7 @@
     <template id="detail-monster">
       <h3>3D Model Monster</h3>
       <div class="modal__media">
-          <img class="modal__image" src="assets/CharacterRuncycle.gif" alt="3D Model Monster"/>
+          <img class="modal__image" src="assets/gif/CharacterRuncycle.gif" alt="3D Model Monster"/>
         </div>
         <p>
           Designed and modeled a custom crawling monster inspired by the Kingdom Hearts series, starting with original concept art created in Photoshop. 
@@ -152,7 +213,7 @@
         <div class="audio-swap-item">
         <video
           class="modal__video audio-swap-video"
-          src="assets/Original.mp4"
+          src="assets/mp4/Original.mp4"
           controls
           playsinline
           preload="metadata">
@@ -163,7 +224,7 @@
       <div class="audio-swap-item">
         <video
           class="modal__video audio-swap-video"
-          src="assets/AudioSwap.mp4"
+          src="assets/mp4/AudioSwap.mp4"
           controls
           playsinline
           preload="metadata">

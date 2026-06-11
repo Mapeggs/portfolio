@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function currentProjectsView() {
     const h = location.hash;
-    if (!h.startsWith('#projects')) return null;
-    if (h.startsWith('#projects/designs')) return 'gallery-designs';
-    return 'gallery-games'; // default
+    if (h === '#designs' || h.startsWith('#projects/designs')) return 'gallery-designs';
+    if (h === '#hacks' || h.startsWith('#projects/hacks')) return 'gallery-hacks';
+    if (h === '#games' || h.startsWith('#projects/games')) return 'gallery-games';
+    return null;
   }
 
   function setActiveLink(hash) {
@@ -31,15 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = normalizeHash(hash);
     const target = document.querySelector(id);
 
-    // Hide all pages, show target
-    pages.forEach(p => p.classList.remove('active'));
-    if (target && target.classList.contains('page')) {
-      target.classList.add('active');
+    // Hide all pages, show target. This portfolio now uses separate HTML pages,
+    // so only run the old single-page behavior when .page sections exist.
+    if (pages.length) {
+      pages.forEach(p => p.classList.remove('active'));
+      if (target && target.classList.contains('page')) {
+        target.classList.add('active');
+        setActiveLink(hash);
+        if (location.hash !== hash) history.replaceState(null, '', hash);
+      }
     }
-
-    // Keep nav highlighting + full hash (incl. /games or /designs)
-    setActiveLink(hash);
-    if (location.hash !== hash) history.replaceState(null, '', hash);
   }
 
   // Top nav
@@ -104,6 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('click', (e) => {
+    const detailTrigger = e.target.closest('[data-open-detail]');
+    if (detailTrigger) {
+      e.preventDefault();
+      const galleryId = detailTrigger.dataset.openGallery;
+      if (galleryId && typeof window.showGallery === 'function') {
+        window.showGallery(galleryId);
+        const galleryHashes = {
+          'gallery-designs': '#designs',
+          'gallery-hacks': '#hacks',
+          'gallery-games': '#games'
+        };
+        history.replaceState(null, '', galleryHashes[galleryId] || '#games');
+      }
+      openModalFromTemplateId(detailTrigger.dataset.openDetail);
+      return;
+    }
+
     const card = e.target.closest('.image-card');
     if (card && card.dataset.detail) {
       e.preventDefault();
@@ -113,14 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape' && !document.body.classList.contains('media-lightbox-open')) closeModal();
   });
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 })();
 
 
-// ===== Sub-nav (Games / Designs) deep-linked tabs =====
+// ===== Sub-nav (Games / Artwork / Hacks) deep-linked tabs =====
 (function () {
   const tabButtons = document.querySelectorAll('.projects-subnav .subnav-link');
   const galleries  = document.querySelectorAll('.projects-grid.gallery');
@@ -155,7 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Set initial tab from the current hash
-  const initial = location.hash.startsWith('#projects/designs') ? 'gallery-designs' : 'gallery-games';
+  let initial = 'gallery-games';
+  if (location.hash === '#designs' || location.hash.startsWith('#projects/designs')) initial = 'gallery-designs';
+  if (location.hash === '#hacks' || location.hash.startsWith('#projects/hacks')) initial = 'gallery-hacks';
   window.showGallery(initial);
 
 
@@ -222,4 +243,144 @@ document.addEventListener('click', (e) => {
     document.body.classList.remove('modal-open');
   }
 });
+})();
+
+
+// ===== Hack project screenshot carousel =====
+(function () {
+  function getParts(carousel) {
+    return {
+      viewport: carousel.querySelector('.hack-carousel__viewport'),
+      slides: Array.from(carousel.querySelectorAll('.hack-carousel__slide')),
+      dots: Array.from(carousel.querySelectorAll('.hack-carousel__dot'))
+    };
+  }
+
+  function setActiveDot(carousel, index) {
+    const { dots } = getParts(carousel);
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+  }
+
+  function currentIndex(carousel) {
+    const { viewport, slides } = getParts(carousel);
+    if (!viewport || !slides.length) return 0;
+    const center = viewport.scrollLeft + viewport.clientWidth / 2;
+    let bestIndex = 0;
+    let bestDistance = Infinity;
+    slides.forEach((slide, i) => {
+      const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+      const distance = Math.abs(center - slideCenter);
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        bestIndex = i;
+      }
+    });
+    return bestIndex;
+  }
+
+  function scrollToSlide(carousel, index) {
+    const { viewport, slides } = getParts(carousel);
+    if (!viewport || !slides[index]) return;
+    viewport.scrollTo({
+      left: slides[index].offsetLeft - 10,
+      behavior: 'smooth'
+    });
+    setActiveDot(carousel, index);
+  }
+
+  document.addEventListener('click', (e) => {
+    const directionBtn = e.target.closest('[data-carousel-direction]');
+    if (directionBtn) {
+      e.preventDefault();
+      const carousel = directionBtn.closest('[data-carousel]');
+      if (!carousel) return;
+      const { slides } = getParts(carousel);
+      if (!slides.length) return;
+      const direction = directionBtn.dataset.carouselDirection === 'next' ? 1 : -1;
+      const nextIndex = Math.max(0, Math.min(slides.length - 1, currentIndex(carousel) + direction));
+      scrollToSlide(carousel, nextIndex);
+      return;
+    }
+
+    const dot = e.target.closest('[data-carousel-dot]');
+    if (dot) {
+      e.preventDefault();
+      const carousel = dot.closest('[data-carousel]');
+      const index = Number.parseInt(dot.dataset.carouselDot, 10);
+      if (carousel && Number.isInteger(index)) scrollToSlide(carousel, index);
+    }
+  });
+
+  let scrollTimer;
+  document.addEventListener('scroll', (e) => {
+    const viewport = e.target.closest?.('.hack-carousel__viewport');
+    if (!viewport) return;
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      const carousel = viewport.closest('[data-carousel]');
+      if (carousel) setActiveDot(carousel, currentIndex(carousel));
+    }, 80);
+  }, true);
+})();
+
+
+// ===== Enlarged animation viewer =====
+(function () {
+  const lightbox = document.getElementById('mediaLightbox');
+  if (!lightbox) return;
+
+  const video = lightbox.querySelector('.media-lightbox__video');
+  const title = lightbox.querySelector('.media-lightbox__title');
+  const closeBtn = lightbox.querySelector('.media-lightbox__close');
+
+  function openLightbox(src, label) {
+    if (!src || !video) return;
+
+    video.src = src;
+    video.load();
+    video.play().catch(() => {
+      // Browsers may block autoplay in some cases; controls remain available.
+    });
+
+    if (title) title.textContent = label || 'Animation Preview';
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('media-lightbox-open');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('media-lightbox-open');
+
+    if (video) {
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    const zoomTrigger = e.target.closest('[data-zoom-src]');
+    if (zoomTrigger) {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(zoomTrigger.dataset.zoomSrc, zoomTrigger.dataset.zoomTitle);
+      return;
+    }
+
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      e.stopPropagation();
+      closeLightbox();
+    }
+  }, true);
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
 })();
